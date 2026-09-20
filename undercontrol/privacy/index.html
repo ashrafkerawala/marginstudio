@@ -4,26 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Under Control Privacy Policy (Draft)</title>
+  <title>Under Control Privacy Policy (Draft) — Margin Studio</title>
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+
+  <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/">Margin Studio</a>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <main>
-      <h1>Under Control: Privacy Policy</h1>
+  <header class="site-head">
+    <div class="shell">
+      <a class="brand" href="/">Margin<em>Studio</em></a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="/#work">Work</a>
+        <a href="/#studio">Studio</a>
+      </nav>
+    </div>
+  </header>
 
-      <div class="notice">
-        <strong>Draft.</strong> This page is a placeholder. The full privacy policy will be published here before it is linked from the app or the Play Store listing.
+  <main id="main">
+    <div class="shell">
+      <article class="doc">
+        <h1>Under Control: Privacy Policy</h1>
+
+        <div class="notice">
+          <strong>Draft.</strong> This page is a placeholder. The full privacy
+          policy will be published here before it is linked from the app or the
+          Google Play listing.
+        </div>
+
+        <!--
+          TODO — Ashraf: replace everything above with the real policy before
+          submitting to Play, and at that point also:
+            1. remove <meta name="robots" content="noindex">
+            2. drop "(Draft)" from the <title>
+            3. delete this notice block
+            4. add a "Last updated" line using the .updated class
+          Keep this URL exactly as it is — the Play listing will point at it.
+        -->
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="shell">
+      <div class="foot-grid">
+        <span>&copy; 2026 Margin Studio</span>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="https://github.com/ashrafkerawala" rel="noopener noreferrer">GitHub</a>
+        </nav>
       </div>
-    </main>
-
-    <footer>
-      &copy; Margin Studio
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>

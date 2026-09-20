@@ -4,29 +4,171 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Margin Studio</title>
-  <meta name="description" content="Margin Studio builds simple, focused apps for Android.">
+  <meta name="description" content="Margin Studio builds small, focused apps for Android that do one job well.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+
+  <link rel="preload" href="/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/">Margin Studio</a>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <main>
-      <h1>Simple, focused apps.</h1>
-      <p class="lead">Margin Studio builds small apps for Android that do one job well.</p>
+  <header class="site-head">
+    <div class="shell">
+      <a class="brand" href="/">Margin<em>Studio</em></a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+      </nav>
+    </div>
+  </header>
 
-      <section class="card">
-        <h2>Under Control</h2>
-        <p>An expense manager that helps you keep track of your spending, with transactions detected from your payment notifications.</p>
-        <p><a href="/undercontrol/privacy/">Privacy Policy</a></p>
-      </section>
-    </main>
+  <main id="main">
 
-    <footer>
-      &copy; Margin Studio
-    </footer>
-  </div>
+    <!-- ── 01 · Hero ─────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <div class="rail" data-reveal>
+            <span class="folio">01</span>
+            <span class="label">Margin Studio</span>
+            <p class="note">margin, n. — the blank edge of a page, where the reader does their thinking.</p>
+          </div>
+
+          <div class="hero-body">
+            <h1 class="display">
+              <span class="line"><span class="line-in" data-reveal data-reveal-delay="1">Simple,</span></span>
+              <span class="line"><span class="line-in" data-reveal data-reveal-delay="2">focused</span></span>
+              <span class="line accent"><span class="line-in" data-reveal data-reveal-delay="3">apps.</span></span>
+            </h1>
+            <p class="lede" data-reveal data-reveal-delay="4">
+              Margin Studio builds small apps for Android that do one job well —
+              then stay out of your way.
+            </p>
+          </div>
+        </div>
+
+        <!-- Decorative: a stack of ruled sheets lifting off the page. -->
+        <div class="stage" aria-hidden="true">
+          <div class="sheets">
+            <div class="sheet"></div>
+            <div class="sheet"></div>
+            <div class="sheet"></div>
+            <div class="sheet"></div>
+            <div class="sheet"><span class="sheet-mark"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 · Work ─────────────────────────────────────────────── -->
+    <section class="section" id="work">
+      <div class="shell">
+        <div class="tracks">
+          <div class="rail" data-reveal>
+            <span class="folio">02</span>
+            <span class="label">Work</span>
+          </div>
+
+          <div>
+            <div class="work-head" data-reveal>
+              <h2 class="section-title">Under Control</h2>
+              <span class="status">In development</span>
+            </div>
+
+            <div class="section-body" data-reveal data-reveal-delay="1">
+              <p>
+                An expense manager that keeps track of your spending, with
+                transactions detected from the payment notifications your phone
+                already receives.
+              </p>
+            </div>
+
+            <!--
+              TODO — Ashraf: these three points are written only from what the
+              previous site already claimed. Before launch, confirm or correct:
+                · Does everything stay on the device, or is anything synced?
+                · Is an account or sign-up required?
+                · Any analytics or crash-reporting SDKs?
+              Those same three answers are what the privacy policy needs, so
+              answering once covers both. Do not add a data-handling claim here
+              until it is verified — a Play reviewer may read this page.
+            -->
+            <ul class="features">
+              <li data-reveal data-reveal-delay="2">
+                <span class="idx">i</span>
+                <h3>Nothing to type</h3>
+                <p>
+                  Transactions are picked up from the payment notifications your
+                  bank and UPI apps already send. No manual entry, no receipts to
+                  photograph.
+                </p>
+              </li>
+              <li data-reveal data-reveal-delay="3">
+                <span class="idx">ii</span>
+                <h3>A clear picture</h3>
+                <p>
+                  See what you are spending and where it goes, without keeping a
+                  ledger by hand or reconciling anything at the end of the month.
+                </p>
+              </li>
+              <li data-reveal data-reveal-delay="4">
+                <span class="idx">iii</span>
+                <h3>Built for Android</h3>
+                <p>
+                  Designed around the way Android actually delivers notifications,
+                  rather than fitted to it afterwards.
+                </p>
+              </li>
+            </ul>
+
+            <!-- Play badge drops in here at launch, replacing nothing else. -->
+            <a class="link" href="/undercontrol/privacy/">Read the privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 · Studio ───────────────────────────────────────────── -->
+    <section class="section" id="studio">
+      <div class="shell">
+        <div class="tracks">
+          <div class="rail" data-reveal>
+            <span class="folio">03</span>
+            <span class="label">Studio</span>
+            <p class="note">One person. One app at a time.</p>
+          </div>
+
+          <div class="section-body studio-body" data-reveal data-reveal-delay="1">
+            <p>
+              Most apps do too much. They grow features to justify a subscription,
+              collect more than they need, and turn a small task into a thing you
+              have to manage.
+            </p>
+            <p>
+              Margin Studio works the other way around. Pick one job, do it
+              properly, ask for as little as possible — and leave the margins
+              wide enough for the person using it to think.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="shell">
+      <div class="foot-grid">
+        <span>&copy; 2026 Margin Studio</span>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="/undercontrol/privacy/">Privacy Policy</a>
+          <a href="https://github.com/ashrafkerawala" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
