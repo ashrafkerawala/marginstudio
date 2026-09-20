@@ -48,41 +48,91 @@
     window.addEventListener("pointermove", onPointerMove, { passive: true });
   }
 
-  /* ---- Staged reveals ---------------------------------------------------- */
+  /* ---- Staged reveals ----------------------------------------------------
+     These elements start at opacity:0, so whatever reveals them is load
+     bearing — if it never runs, the page is blank. IntersectionObserver is
+     the primary mechanism, but it only delivers callbacks while the document
+     is actually rendering: open the site in a background tab and zero
+     callbacks arrive until that tab is focused.
 
-  var items = document.querySelectorAll("[data-reveal]");
+     That is recoverable, but it makes the whole page depend on one API
+     firing. So a plain geometry check backs it up, driven by scroll, resize
+     and visibilitychange. Any one of them is enough to reveal the content. */
 
-  function showAll() {
-    for (var i = 0; i < items.length; i++) items[i].classList.add("is-in");
+  var pending = Array.prototype.slice.call(
+    document.querySelectorAll("[data-reveal]")
+  );
+
+  function reveal(el) {
+    el.classList.add("is-in");
+    pending = pending.filter(function (other) {
+      return other !== el;
+    });
+  }
+
+  function revealAll() {
+    pending.slice().forEach(reveal);
+  }
+
+  // Reveal anything currently on screen, without consulting the observer.
+  function revealVisible() {
+    if (!pending.length) return;
+    var h = window.innerHeight || root.clientHeight;
+    pending.slice().forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < h * 0.95 && rect.bottom > 0) reveal(el);
+    });
   }
 
   if (reduceMotion.matches || !("IntersectionObserver" in window)) {
-    showAll();
+    revealAll();
   } else {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
+          reveal(entry.target);
           observer.unobserve(entry.target); // reveal once, then forget it
         });
       },
       { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
     );
 
-    for (var j = 0; j < items.length; j++) observer.observe(items[j]);
+    pending.forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // Backstop. rAF-throttled, and only ever touches what is still pending.
+    var ticking = false;
+    function onViewChange() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        revealVisible();
+      });
+    }
+
+    window.addEventListener("scroll", onViewChange, { passive: true });
+    window.addEventListener("resize", onViewChange, { passive: true });
+
+    // A document that loads hidden gets no rendering lifecycle at all;
+    // catch up the moment it becomes visible.
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") revealVisible();
+    });
+
+    onViewChange();
   }
 
   // If the user switches on reduced motion mid-visit, drop the effects.
-  var onPrefChange = function () {
-    if (!reduceMotion.matches) return;
-    window.removeEventListener("pointermove", onPointerMove);
-    root.style.setProperty("--mx", "0");
-    root.style.setProperty("--my", "0");
-    showAll();
-  };
-
   if (typeof reduceMotion.addEventListener === "function") {
-    reduceMotion.addEventListener("change", onPrefChange);
+    reduceMotion.addEventListener("change", function () {
+      if (!reduceMotion.matches) return;
+      window.removeEventListener("pointermove", onPointerMove);
+      root.style.setProperty("--mx", "0");
+      root.style.setProperty("--my", "0");
+      revealAll();
+    });
   }
 })();
