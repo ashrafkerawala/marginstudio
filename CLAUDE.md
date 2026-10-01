@@ -27,6 +27,7 @@ Changes should serve that concept rather than dilute it.
 
 - `index.html` — landing page. Four parts: hero, Under Control (`#work`), studio note (`#studio`), footer.
 - `undercontrol/privacy/index.html` — the Under Control privacy policy, served at `/undercontrol/privacy/`. **This URL is linked from the app and the Play Store listing, so it must stay stable.** It deliberately shares the site's tokens and type but stays a plain readable document: no 3D, no motion, no script.
+- `spaceorigin/privacy/index.html` — the Space Origin privacy policy, served at `/spaceorigin/privacy/` (published, no draft/noindex). **Linked from the Play Console listing, so the URL must stay stable.** Same document-page skeleton as Under Control. Its claims describe what the shipped build does (Firebase Analytics + Crashlytics, no advertising ID, 13+ audience): update the page and its "Last updated" date whenever the game's data handling changes.
 - `style.css` — the single shared stylesheet, in numbered sections (fonts → tokens → base → layout → hero → 3D → sections → reveals → responsive → reduced-motion → document pages).
 - `script.js` — ~50 lines, no dependencies. Only two jobs: pointer parallax and staged reveals.
 - `fonts/` — self-hosted woff2 (latin subset) plus the OFL licence for each. Both faces are SIL OFL; the licence files must travel with them.
