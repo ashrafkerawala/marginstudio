@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Under Control Privacy Policy (Draft) — Margin Studio</title>
+  <title>Under Control Privacy Policy — Margin Studio</title>
+  <meta name="description" content="Under Control keeps your expenses on your phone. It has no account, no ads, no analytics and no internet access. Here is exactly what it reads, stores and never sends.">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 
@@ -28,22 +28,208 @@
     <div class="shell">
       <article class="doc">
         <h1>Under Control: Privacy Policy</h1>
+        <p class="updated">Last updated: 8 October 2026 &middot; applies to version 1.9.3 and later</p>
 
-        <div class="notice">
-          <strong>Draft.</strong> This page is a placeholder. The full privacy
-          policy will be published here before it is linked from the app or the
-          Google Play listing.
-        </div>
+        <p>
+          Under Control is an expense tracker for Android, made by Margin
+          Studio. It is built to keep your money matters on your phone: there
+          is no account, no advertising and no analytics, and the app does not
+          have Android&rsquo;s permission to use the internet at all. This page
+          explains what the app reads, what it keeps on your phone, and the
+          only ways anything leaves it, all of which you start yourself.
+        </p>
 
-        <!--
-          TODO — Ashraf: replace everything above with the real policy before
-          submitting to Play, and at that point also:
-            1. remove <meta name="robots" content="noindex">
-            2. drop "(Draft)" from the <title>
-            3. delete this notice block
-            4. add a "Last updated" line using the .updated class
-          Keep this URL exactly as it is — the Play listing will point at it.
-        -->
+        <h2>The short version</h2>
+        <ul>
+          <li>Everything you enter stays on your phone. The app has no internet permission, so it cannot send your data anywhere.</li>
+          <li>There is no account or sign-in. Margin Studio never receives your name, email, transactions or anything else.</li>
+          <li>No ads, no analytics, no crash reporting and no tracking code of any kind.</li>
+          <li>Transaction Detection is optional. When you turn it on, the app reads notifications only from the apps you choose, works out the amount and merchant on your phone, and never saves the notification text.</li>
+          <li>Your data leaves your phone only when you choose to export it or save a backup to a folder you pick.</li>
+          <li>We do not sell or share your data, because we never have it.</li>
+        </ul>
+
+        <h2>Who we are</h2>
+        <p>
+          Under Control is published by Margin Studio, an independent studio
+          based in India. For anything in this policy, write to
+          <a href="mailto:letscha8@gmail.com">letscha8@gmail.com</a>.
+        </p>
+
+        <h2>What the app keeps on your phone</h2>
+        <p>
+          The app stores the following in its private storage on your device.
+          Other apps cannot read it, and Android&rsquo;s own cloud backup is
+          switched off for Under Control, so it is not copied to Google&rsquo;s
+          backup servers either.
+        </p>
+        <ul>
+          <li><strong>Your transactions:</strong> the name you give each one, the amount, currency, category, date and time, and whether it is an expense or income.</li>
+          <li><strong>Your budgets:</strong> the amount you set for each category and month.</li>
+          <li><strong>Detected transactions waiting for you:</strong> the amount, currency, merchant name (when one is found), whether it looks like an expense or income, the time it arrived, and whether you added or dismissed it.</li>
+          <li><strong>Rename rules:</strong> when you correct a detected merchant name, the original and your version, so the same merchant is renamed next time.</li>
+          <li><strong>Your settings:</strong> an optional display name and emoji avatar, currency, theme, language, the daily reminder and its time, whether Transaction Detection and its alerts are on, the apps you chose for detection, the backup folder you picked, and whether you have finished setup and the app tour.</li>
+        </ul>
+
+        <h2>Transaction Detection</h2>
+        <p>
+          Transaction Detection turns payment notifications from your bank or
+          payment apps into transactions you can add with a tap. It is off
+          until you switch it on, and it works like this:
+        </p>
+        <ul>
+          <li>
+            Turning it on requires you to grant Under Control
+            <strong>notification access</strong> in Android&rsquo;s settings.
+            You can switch detection off in the app at any time, and withdraw
+            the access itself in Android&rsquo;s settings.
+          </li>
+          <li>
+            Android then delivers notifications to the app. Any notification
+            from an app you have not chosen is ignored immediately. Until you
+            choose at least one app, nothing is read at all.
+          </li>
+          <li>
+            In SMS and messaging apps, only messages from business sender
+            codes (the short codes banks use, such as &ldquo;VK-MYBANK&rdquo;)
+            are read. For messages from people and ordinary phone numbers, the
+            app checks only who sent them and goes no further.
+          </li>
+          <li>
+            For a notification it does read, the app looks at the title and
+            text to find an amount, the currency, whether money went out or
+            came in, and the merchant. Promotional and reminder notifications
+            are skipped.
+          </li>
+          <li>
+            <strong>The notification text itself is never saved.</strong> Only
+            the result (amount, currency, merchant, expense or income, and
+            time) is stored, as a detected transaction you can add or dismiss.
+          </li>
+          <li>
+            So that the same payment is not shown twice (for example once by
+            your bank&rsquo;s SMS and again by your payment app), the app
+            remembers recent notifications for up to 24 hours. This memory is
+            held only while the app is running, is never written to storage,
+            and is gone whenever Android closes the app.
+          </li>
+          <li>
+            To let you choose apps, the app shows a list of the apps installed
+            on your phone. The list is read only to display it; only the apps
+            you pick are saved.
+          </li>
+          <li>Nothing from your notifications ever leaves your phone.</li>
+        </ul>
+
+        <h2>Permissions the app uses</h2>
+        <ul>
+          <li><strong>Notification access:</strong> only for Transaction Detection, as described above, and only if you grant it.</li>
+          <li><strong>Notifications:</strong> to show your daily reminder and, if you want them, &ldquo;transaction detected&rdquo; alerts.</li>
+          <li><strong>Alarms &amp; reminders:</strong> to deliver the daily reminder at the time you set.</li>
+          <li><strong>Run at startup:</strong> to set your reminder again after the phone restarts.</li>
+          <li><strong>See installed apps:</strong> to show the list you pick detection apps from.</li>
+          <li>
+            <strong>Network state, keep awake and background work:</strong>
+            these are added automatically by Android&rsquo;s background-task
+            library, which the app uses to save automatic backups. The app does
+            not use the network.
+          </li>
+        </ul>
+        <p>
+          Under Control does not request internet access, and it does not
+          request your contacts, SMS, phone, location, camera, microphone,
+          photos, accounts or advertising ID.
+        </p>
+
+        <h2>When data leaves your phone</h2>
+        <p>Only when you do one of these things:</p>
+        <ul>
+          <li>
+            <strong>Export to CSV.</strong> The app creates a spreadsheet of
+            your transactions and opens Android&rsquo;s share menu. Where it
+            goes next is your choice, and the app or service you share it with
+            handles it under its own policy.
+          </li>
+          <li>
+            <strong>Auto-Backup to Device.</strong> If you turn it on, each
+            time you close the app it saves a backup file (everything the app
+            stores about your money: transactions, budgets, detected
+            transactions and rename rules, plus your display name, avatar,
+            currency and theme) to a folder you choose. If that folder is
+            synced to a cloud service such as Google Drive, that provider
+            stores the copy under its own policy.
+          </li>
+          <li>
+            <strong>Restore Data.</strong> The app reads a backup file you
+            pick, to bring your data back.
+          </li>
+        </ul>
+        <p>
+          Backup and export files are not encrypted, so keep them somewhere
+          you trust. Notifications the app shows, such as the amount of a
+          detected payment, appear on your screen and, depending on your
+          Android settings, on your lock screen.
+        </p>
+
+        <h2>App updates through Google Play</h2>
+        <p>
+          The app uses Google Play&rsquo;s in-app update feature, which asks
+          the Play Store app on your phone whether a newer version of Under
+          Control is available. That check is carried out by Google Play under
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google&rsquo;s privacy policy</a>.
+          Under Control adds nothing of your data to it.
+        </p>
+
+        <h2>What we do not collect</h2>
+        <p>
+          Margin Studio does not receive any information from the app: no
+          transactions, notifications, names, email addresses, device
+          identifiers, usage statistics or crash reports. The app contains no
+          advertising, analytics or tracking libraries.
+        </p>
+
+        <h2 id="delete-your-data">Delete your data</h2>
+        <p>
+          Because everything lives on your phone, you are in full control of
+          deleting it:
+        </p>
+        <ul>
+          <li>Delete individual transactions by selecting them on the Transactions tab.</li>
+          <li>Delete everything by uninstalling the app, or with Android Settings &rsaquo; Apps &rsaquo; Under Control &rsaquo; Storage &rsaquo; Clear storage.</li>
+          <li>Backup and CSV files you saved are separate files: delete them from wherever you put them.</li>
+          <li>To stop Transaction Detection, switch it off in the app or remove the app&rsquo;s notification access in Android&rsquo;s settings.</li>
+        </ul>
+        <p>
+          Margin Studio holds no copy of your data on any server, so there is
+          nothing for us to delete. You are still welcome to write to
+          <a href="mailto:letscha8@gmail.com">letscha8@gmail.com</a> with any
+          question about your data, and depending on where you live you may
+          have further rights under local law, which we will honour.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+          Your data is kept in the app&rsquo;s private storage, which Android
+          protects from other apps, and is as safe as your phone&rsquo;s own
+          screen lock. Backup and export files are not encrypted.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+          Under Control is not directed at children under 13. The app does not
+          collect information from anyone, children included.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          If a future version handles your data differently, we will update
+          this page and the date at the top before that version reaches you.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Margin Studio, <a href="mailto:letscha8@gmail.com">letscha8@gmail.com</a>.
+        </p>
       </article>
     </div>
   </main>

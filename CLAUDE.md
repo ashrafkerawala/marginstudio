@@ -26,7 +26,7 @@ Changes should serve that concept rather than dilute it.
 ## Architecture
 
 - `index.html` — landing page. Four parts: hero, Under Control (`#work`), studio note (`#studio`), footer.
-- `undercontrol/privacy/index.html` — the Under Control privacy policy, served at `/undercontrol/privacy/`. **This URL is linked from the app and the Play Store listing, so it must stay stable.** It deliberately shares the site's tokens and type but stays a plain readable document: no 3D, no motion, no script.
+- `undercontrol/privacy/index.html` — the Under Control privacy policy, served at `/undercontrol/privacy/` (published, no draft/noindex). **This URL is linked from the Play Store listing, so it must stay stable.** It deliberately shares the site's tokens and type but stays a plain readable document: no 3D, no motion, no script. Its claims were checked against the 1.9.3 build: the merged release manifest has **no INTERNET permission** (the network-state, wake-lock and foreground-service permissions come from WorkManager), there is no account, analytics, crash reporting or ads, Android backup is off, notification text is parsed in memory and never stored, SMS apps are read only for business sender codes, and data leaves the phone only through CSV share or the user-chosen backup folder. Update the page and its "Last updated" date whenever the app's data handling changes (for example if a library adds INTERNET, or analytics is added).
 - `spaceorigin/privacy/index.html` — the Space Origin privacy policy, served at `/spaceorigin/privacy/` (published, no draft/noindex). **Linked from the Play Console listing, so the URL must stay stable.** Same document-page skeleton as Under Control. Its claims describe what the shipped build does (Firebase Analytics + Crashlytics, no advertising ID, 13+ audience): update the page and its "Last updated" date whenever the game's data handling changes.
 - `style.css` — the single shared stylesheet, in numbered sections (fonts → tokens → base → layout → hero → 3D → sections → reveals → responsive → reduced-motion → document pages).
 - `script.js` — ~50 lines, no dependencies. Only two jobs: pointer parallax and staged reveals.
@@ -52,6 +52,5 @@ Changes should serve that concept rather than dilute it.
 
 ## Outstanding
 
-- The privacy policy is still a **placeholder**. Before Play submission: write the real policy, then remove the `noindex` meta, drop `(Draft)` from the `<title>`, and delete the `.notice` block. There is a TODO comment in the file listing these.
-- `index.html` carries a TODO above the feature list. The three feature points were derived only from copy that already existed; the data-handling facts (on-device or synced, account required, any analytics SDKs) are unverified. **Do not add a data-handling claim to the page until it is confirmed** — a Play reviewer may read it. The same three answers are what the privacy policy needs.
+- `index.html` carries a TODO above the feature list. The data-handling facts it was waiting on are now confirmed by the privacy policy (data stays on the device, no account, no analytics SDKs, no internet permission); any claim added to the landing page must match that policy word for word in substance.
 - Both pages ship a strict CSP via `<meta>`. A meta CSP cannot express `frame-ancestors`; that needs a real HTTP header, which GitHub Pages cannot send.
